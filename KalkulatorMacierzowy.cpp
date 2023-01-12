@@ -133,7 +133,7 @@ void multiMatrix(int m1[3][3], int m2[3][3])
 	
 }
 
-// sprawdza poprawnosc wyboru opcji uzytkownika, w przypadku blednej podajemy ja jeszcze raz
+// sprawdza poprawnosc wyboru opcji lub elementu macierzy podanej przez uzytkownika, w przypadku blednej podajemy ja jeszcze raz
 
 void validCheck(int& choice)
 {
