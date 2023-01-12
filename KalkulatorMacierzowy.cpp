@@ -153,7 +153,7 @@ void matrixElCheck(int& el)
 	{
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
-		cout << "Podaj poprawna liczbe: " << endl;
+		cout << "Podaj poprawna liczbe/cyfre: " << endl;
 		cin >> el;
 	}
 }
@@ -193,7 +193,9 @@ int main()
 		for (int j = 0; j < 3; j++)
 		{
 			cout << "Podaj B" << "[" << i + 1 << "]" << "[" << j + 1 << "]" << ":" << endl;
-			cin >> matrix2[i][j];
+			cin >> el;
+			matrixElCheck(el);
+			matrix2[i][j] = el;
 		}
 	}
 	system("cls");
@@ -274,6 +276,13 @@ int main()
 			if (ch == 1)
 			{
 				system("cls");
+
+				cout << "Macierz A: " << endl << endl;
+				seeMatrix(matrix1);
+
+				cout << "Macierz B: " << endl << endl;
+				seeMatrix(matrix2);
+
 				cout << "Macierz przed dzialaniem: " << endl << endl;
 				seeMatrix(matrix1);
 				cout << "Macierz stransponowana: " << endl << endl;
@@ -282,6 +291,13 @@ int main()
 			else if (ch == 2)
 			{
 				system("cls");
+
+				cout << "Macierz A: " << endl << endl;
+				seeMatrix(matrix1);
+
+				cout << "Macierz B: " << endl << endl;
+				seeMatrix(matrix2);
+
 				cout << "Macierz przed dzialaniem: " << endl << endl;
 				seeMatrix(matrix2);
 				cout << endl;
