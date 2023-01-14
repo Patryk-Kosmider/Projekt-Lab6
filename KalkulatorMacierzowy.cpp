@@ -73,7 +73,7 @@ void sumMatrix(int m1[3][3], int m2[3][3])
 	}
 
 	seeMatrix(mres);
-	
+
 }
 
 
@@ -92,7 +92,7 @@ void subMatrix(int m1[3][3], int m2[3][3])
 
 	seeMatrix(mres);
 
-	
+
 }
 
 // transponowanie wybranej macierzy
@@ -109,7 +109,7 @@ void transMatrix(int m1[3][3])
 	}
 
 	seeMatrix(mres);
-	
+
 }
 
 // mnozenie macierzy
@@ -130,31 +130,35 @@ void multiMatrix(int m1[3][3], int m2[3][3])
 		}
 	}
 	seeMatrix(mres);
-	
+
 }
 
 // sprawdza czy uzytkownik nie podal czegos innego niz liczba i pozwala na ponowne wprowadzenie danych
 
 // funkcja sprawdzajaca poprawnosc w przypadku wyboru elementow menu
+
+// menu
 void validCheck(int& choice)
 {
 	cin >> choice;
 	while (!cin || choice < 1 || choice > 4)
 	{
-		cin.clear();
-		cin.ignore(INT_MAX, '\n');
+		cin.clear(); // czyszczenie danych w przypadku bledu
+		cin.ignore(INT_MAX, '\n'); // ignoruje kazde podany znak az do napotkania znaku nowej linii
 		cout << "Podaj poprawna opcje: " << endl;
 		cin >> choice;
 	}
 }
 
 // funkcja sprawdzajaca poprawnosc w przypadku podawania elementow do macierzy
+
+// macierze
 void matrixElCheck(int& el)
 {
-	while(!cin)
+	while (!cin)
 	{
-		cin.clear();
-		cin.ignore(INT_MAX, '\n');
+		cin.clear();  // czyszczenie danych w przypadku bledu
+		cin.ignore(INT_MAX, '\n'); // ignoruje kazde podany znak az do napotkania znaku nowej linii
 		cout << "Podaj poprawna liczbe/cyfre: " << endl;
 		cin >> el;
 	}
@@ -176,14 +180,14 @@ int main()
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			cout << "Podaj A" << "[" << i+1 <<"]" << "[" << j + 1 << "]" << ":" << endl;
+			cout << "Podaj A" << "[" << i + 1 << "]" << "[" << j + 1 << "]" << ":" << endl;
 			cin >> el;
 			matrixElCheck(el);
 			matrix1[i][j] = el;
 
 
 		}
-	} 
+	}
 	system("cls");
 
 	firstmenu();
@@ -232,7 +236,7 @@ int main()
 			sumMatrix(matrix1, matrix2);
 			mainmenu();
 			cout << "Wybierz opcje [ 1 - 4 ]: ";
-			
+
 		}
 		if (choice == 2)
 		{
@@ -247,7 +251,7 @@ int main()
 			subMatrix(matrix1, matrix2);
 			mainmenu();
 			cout << "Wybierz opcje [ 1 - 4 ]: ";
-			
+
 		}
 		if (choice == 3)
 		{
@@ -305,7 +309,8 @@ int main()
 				cout << endl;
 				cout << "Macierz stransponowana: " << endl << endl;
 				transMatrix(matrix2);
-			} else
+			}
+			else
 			{
 				cout << "Zla opcja, sprobuj ponownie:" << endl;
 
@@ -315,10 +320,10 @@ int main()
 			validCheck(choice);
 		}
 		else {
-			
+
 			validCheck(choice);
 		}
 	}
-	
+
 	return 0;
 }
