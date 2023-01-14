@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <climits>
 #include <iomanip>
 
 using namespace std;
@@ -133,8 +133,9 @@ void multiMatrix(int m1[3][3], int m2[3][3])
 	
 }
 
-// sprawdza poprawnosc wyboru opcji lub elementu macierzy podanej przez uzytkownika, w przypadku blednej podajemy ja jeszcze raz
+// sprawdza czy uzytkownik nie podal czegos innego niz liczba i pozwala na ponowne wprowadzenie danych
 
+// funkcja sprawdzajaca poprawnosc w przypadku wyboru elementow menu
 void validCheck(int& choice)
 {
 	cin >> choice;
@@ -147,6 +148,7 @@ void validCheck(int& choice)
 	}
 }
 
+// funkcja sprawdzajaca poprawnosc w przypadku podawania elementow do macierzy
 void matrixElCheck(int& el)
 {
 	while(!cin)
